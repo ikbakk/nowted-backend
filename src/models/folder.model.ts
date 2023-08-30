@@ -4,7 +4,7 @@ import { FolderSchema } from '../types/models';
 const folderSchema = new Schema<FolderSchema>({
   name: {
     type: String,
-    required: true
+    required: [true, 'Name is required']
   },
   createdAt: {
     type: Date,

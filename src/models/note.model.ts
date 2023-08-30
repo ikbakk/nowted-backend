@@ -4,11 +4,11 @@ import { NoteSchema } from '../types/models';
 const noteSchema = new Schema<NoteSchema>({
   title: {
     type: String,
-    required: true
+    required: [true, 'Title is required']
   },
   content: {
     type: String,
-    required: true
+    required: [true, 'Content cannot be empty']
   },
   folderId: {
     type: Types.ObjectId,

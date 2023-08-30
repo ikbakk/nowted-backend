@@ -1,11 +1,13 @@
 import { Folder } from '../models';
 
 export const newFolder = async (name: string) => {
-  return await Folder.create({
+  const folder = await Folder.create({
     name
   });
+
+  return folder;
 };
 
-export const foldersList = () => {
-  return Folder.find();
+export const foldersList = async () => {
+  return await Folder.find();
 };
