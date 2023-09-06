@@ -17,3 +17,19 @@ export const newNote = async (
 export const notesList = async () => {
   return await Note.find();
 };
+
+export const updateNote = async (id: string, content: string) => {
+  const updatedNote = await Note.findByIdAndUpdate(id, {
+    $set: {
+      content
+    }
+  });
+
+  return updatedNote;
+};
+
+export const deleteNote = async (id: string) => {
+  const deletedNote = await Note.findByIdAndDelete(id);
+
+  return deletedNote;
+};
